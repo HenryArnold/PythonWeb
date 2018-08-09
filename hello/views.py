@@ -15,7 +15,7 @@ def GetId(url):
 def download(url):
     id=GetId(url)
     crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+id+'%26installsource%3Dondemand%26uc'
-    return HttpResponse('Hello from Python!')
+    return HttpResponse('Hello')
 '''
     import urllib.request
     try:
@@ -30,7 +30,6 @@ def index(request):
 
     if 'url' in request.GET:
         url = request.GET['url']
-        return HttpResponse(url)
         download(url)
 
     return render(request, 'index.html')
