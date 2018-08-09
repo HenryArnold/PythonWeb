@@ -6,7 +6,6 @@ from .models import Greeting
 # Create your views here.
 def index(request):
     url = request.Get['url']
-    print url
     download(url)
 
 
