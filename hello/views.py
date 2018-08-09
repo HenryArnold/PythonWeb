@@ -4,13 +4,20 @@ from django.http import HttpResponse
 from .models import Greeting
 
 def GetId(url):
-    id=''
+    list0=[]
+    str0=''
+    url+='/'
     for i in url:
+        str0+=i
         if i=='/':
-            id=''
-        else:
-            id=id+i
-    return id
+            list0.append(str0.strip('/'))
+            str0=''
+
+    ids = list0[-1]
+    name = list0[-2]
+    return (ids, name)
+
+
 '''
 def download(url):
     id=GetId(url)
@@ -32,8 +39,8 @@ def index(request):
     context['error'] =''
     if 'url' in request.GET:
         url = request.GET['url']
-        id=GetId(url)
-        crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+id+'%26installsource%3Dondemand%26uc'
+        ids, name=GetId(url)
+        crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+ids+'%26installsource%3Dondemand%26uc'
         return HttpResponse(crx)
         import urllib.request
         try:
