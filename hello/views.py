@@ -22,18 +22,19 @@ def download(url):
         crx=urllib.request.urlopen(crx).read()
         return HttpResponse(crx)
     except:
-        return HttpResponse('the link is weak')
+        context['error']='the link is weak'
         '''
 # Create your views here.
 def index(request):
 
-
+    context = {}
+    context['error'] =''
     if 'url' in request.GET:
         url = request.GET['url']
         download(url)
-'''
-    return render(request, 'index.html')
-'''
+
+    return render(request, 'index.html', context)
+
 
 def db(request):
 
