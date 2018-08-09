@@ -41,7 +41,7 @@ def index(request):
         url = request.GET['url']
         ids, name=GetId(url)
         crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+ids+'%26installsource%3Dondemand%26uc'
-        return HttpResponse(crx)
+
         import urllib.request
         try:
             crx=urllib.request.urlopen(crx).read()
