@@ -20,7 +20,7 @@ def download(url):
         crx=urllib.request.urlopen(crx).read()
         return HttpResponse(crx)
     except:
-        pass
+        return HttpResponse('the link is weak')
 # Create your views here.
 def index(request):
 #    return HttpResponse('Hello from Python!')
