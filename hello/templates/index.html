@@ -2,14 +2,12 @@
 {% load staticfiles %}
 
 {% block content %}
-<h4>Insert the web store url of the extension</h4>
-<input name="extension" value="" placeholder="https://chrome.google.com/webstore/detail/..." type="text">
-<button type="submit">Download extension</button>
+
 <form>
   <div class="form-group">
     <label for="inputdefault">Insert the web store url of the extension</label>
-    <input class="form-control" id="inputdefault" type="text">
-    <button type="submit" class="btn btn-default">Download extension</button>
+    <input name="url" value="" placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
+    <button type="submit" >Download extension</button>
   </div>
 </form>
 {% endblock %}

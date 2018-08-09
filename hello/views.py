@@ -5,6 +5,11 @@ from .models import Greeting
 
 # Create your views here.
 def index(request):
+    url = request.Get['url']
+    print url
+    download(url)
+
+
 #    return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
 
@@ -20,6 +25,9 @@ def GetId(url):
 def download(url):
     id=GetId(url)
     crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+id+'%26installsource%3Dondemand%26uc'
+    import urllib2
+    crx=urllib2.urlopen(crx)
+    return HttpResponse(crx)
 
 def db(request):
 
