@@ -23,12 +23,14 @@ def download(url):
         return HttpResponse('the link is weak')
 # Create your views here.
 def index(request):
-#    return HttpResponse('Hello from Python!')
+    return HttpResponse('Hello from Python!')
+'''
     if 'url' in request.GET:
         url = request.GET['url']
         download(url)
-    return render(request, 'index.html')
 
+    return render(request, 'index.html')
+'''
 
 def db(request):
 
