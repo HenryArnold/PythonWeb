@@ -30,7 +30,7 @@ def index(request):
 
     if 'url' in request.GET:
         url = request.GET['url']
-        return HttpResponse("hello")
+        return HttpResponse(url)
         download(url)
 
     return render(request, 'index.html')
