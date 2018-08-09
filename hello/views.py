@@ -70,12 +70,12 @@ def index(request):
             crx=urllib.request.urlopen(crx)
 
 
-            if (1):
+            while True:
                 c = crx.read(chunk_size)
                 if c:
                     yield c
                 else:
-                    break
+                    return
             response = StreamingHttpResponse(file_iterator(the_file_name))
             response['Content-Type'] = 'application/octet-stream'
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
