@@ -32,6 +32,7 @@ def index(request):
     if 'url' in request.GET:
         url = request.GET['url']
         download(url)
+        return HttpResponse(url)
 
     return render(request, 'index.html', context)
 
