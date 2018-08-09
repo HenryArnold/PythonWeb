@@ -69,7 +69,7 @@ def index(request):
         try:
             crx=urllib.request.urlopen(crx)
             where True:
-                c = f.read(chunk_size)
+                c = crx.read(chunk_size)
                 if c:
                     yield c
                 else:
