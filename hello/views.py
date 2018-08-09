@@ -33,6 +33,7 @@ def index(request):
     if 'url' in request.GET:
         url = request.GET['url']
         id=GetId(url)
+        return HttpResponse(id)
         crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+id+'%26installsource%3Dondemand%26uc'
         import urllib.request
         try:
@@ -40,7 +41,6 @@ def index(request):
             return HttpResponse(crx)
         except:
             context['error']='the link is weak'
-            return (context['error'])
 
     return render(request, 'index.html', context)
 
