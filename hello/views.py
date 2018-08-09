@@ -22,7 +22,7 @@ def download(url):
 # Create your views here.
 def index(request):
 #    return HttpResponse('Hello from Python!')
-    if url in request:
+    if url in request.GET:
         url = request.GET['url']
         download(url)
     return render(request, 'index.html')
