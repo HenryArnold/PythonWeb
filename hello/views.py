@@ -70,8 +70,8 @@ def index(request):
             crx=urllib.request.urlopen(crx)
 
 
-            where True:
-                c = crx.read()
+            if (1):
+                c = crx.read(chunk_size)
                 if c:
                     yield c
                 else:
