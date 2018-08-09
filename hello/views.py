@@ -15,8 +15,8 @@ def GetId(url):
 def download(url):
     id=GetId(url)
     crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+id+'%26installsource%3Dondemand%26uc'
-    import urllib
-    crx=urllib.urlopen(crx)
+    import urllib.request
+    crx=urllib.request.urlopen(crx).read()
     return HttpResponse(crx)
 
 # Create your views here.
