@@ -76,7 +76,6 @@ def index(request):
                     yield c
                 else:
                     break
-            crx.read(chunk_size)
             response = StreamingHttpResponse(file_iterator(the_file_name))
             response['Content-Type'] = 'application/octet-stream'
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
