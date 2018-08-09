@@ -20,7 +20,7 @@ def download(url):
         crx=urllib.request.urlopen(crx).read()
         return HttpResponse(crx)
     except:
-        return render(request, 'index.html')
+        return render('index.html')
 # Create your views here.
 def index(request):
 #    return HttpResponse('Hello from Python!')
