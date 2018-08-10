@@ -33,9 +33,8 @@ def download(url):
         return (context['error'])
 
         '''
-
-#from django.http import StreamingHttpResponse
 '''
+#from django.http import StreamingHttpResponse
 def big_file_download(request):
     from django.http import StreamingHttpResponse
     def file_iterator(file_name, chunk_size=512):
@@ -51,8 +50,10 @@ def big_file_download(request):
             response['Content-Type'] = 'application/octet-stream'
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
-'''
 
+def file_download(request):
+
+'''
 
 # Create your views here.
 def index(request):
@@ -64,6 +65,20 @@ def index(request):
         url = request.GET['url']
         ids, the_file_name=GetId(url)
         crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+ids+'%26installsource%3Dondemand%26uc'
+
+        def file_iterator(file_name, chunk_size=512):
+            with open(file_name) as f:
+                while True:
+                    c = f.read(chunk_size)
+                    if c:
+                        yield c
+                    else:
+                        break
+                the_file_name = "big_file.pdf"
+                response = StreamingHttpResponse(file_iterator(the_file_name))
+                response['Content-Type'] = 'application/octet-stream'
+                response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
+                return response
 
         import urllib.request
         try:
