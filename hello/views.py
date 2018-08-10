@@ -66,6 +66,7 @@ def index(request):
         ids, the_file_name=GetId(url)
         crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+ids+'%26installsource%3Dondemand%26uc'
 
+        '''
         def file_iterator(file_name, chunk_size=512):
             with open(file_name) as f:
                 while True:
@@ -78,6 +79,7 @@ def index(request):
                 response['Content-Type'] = 'application/octet-stream'
                 response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
                 return response
+        '''
 
         import urllib.request
 
@@ -97,7 +99,11 @@ def index(request):
             return response
             '''
 
-            return HttpResponse(crx, content_type="application/octet-stream")
+            response =  HttpResponse(crx, content_type="application/octet-stream")
+            response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
+
+            return response
+
             #return HttpResponse(crx)
         except:
             context['error']='the link is weak'
