@@ -54,7 +54,7 @@ def big_file_download(request):
 def file_download(request):
 
 '''
-'''
+
 # Create your views here.
 def index(request):
     from django.http import StreamingHttpResponse
@@ -71,7 +71,7 @@ def index(request):
                 while True:
                     c = f.read(chunk_size)
                     if c:
-                        yield c
+                        return c
                     else:
                         break
                 the_file_name = "big_file.pdf"
@@ -103,7 +103,7 @@ def index(request):
 
     return render(request, 'index.html', context)
 
-'''
+
 def db(request):
 
     greeting = Greeting()

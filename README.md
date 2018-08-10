@@ -1,3 +1,8 @@
+gettingstarted---mainapp
+
+manage url app(install)  wsgi
+
+
 # Python: Getting Started
 
 A barebones Django app, which can easily be deployed to Heroku.
