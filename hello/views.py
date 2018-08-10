@@ -54,7 +54,7 @@ def big_file_download(request):
 def file_download(request):
 
 '''
-
+'''
 # Create your views here.
 def index(request):
     from django.http import StreamingHttpResponse
@@ -103,7 +103,7 @@ def index(request):
 
     return render(request, 'index.html', context)
 
-
+'''
 def db(request):
 
     greeting = Greeting()
