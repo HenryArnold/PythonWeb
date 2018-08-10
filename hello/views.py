@@ -71,20 +71,20 @@ def index(request):
                 while True:
                     c = f.read(chunk_size)
                     if c:
-                        return c
+                        yield c
                     else:
                         break
-                the_file_name = "big_file.pdf"
                 response = StreamingHttpResponse(file_iterator(the_file_name))
                 response['Content-Type'] = 'application/octet-stream'
                 response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
                 return response
 
         import urllib.request
+
         try:
             crx=urllib.request.urlopen(crx)
 
-
+            '''
             while True:
                 c = crx.read(chunk_size)
                 if c:
@@ -95,7 +95,7 @@ def index(request):
             response['Content-Type'] = 'application/octet-stream'
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
-
+'''
 
             #return HttpResponse(crx)
         except:
