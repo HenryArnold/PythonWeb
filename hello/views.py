@@ -82,9 +82,9 @@ def index(request):
         import urllib.request
 
         try:
-            crx=urllib.request.urlopen(crx)
+            crx=urllib.request.urlopen(crx).read()
 
-            '''
+#'''
             while True:
                 c = crx.read(chunk_size)
                 if c:
@@ -95,8 +95,9 @@ def index(request):
             response['Content-Type'] = 'application/octet-stream'
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
-'''
+#'''
 
+            return HttpResponse(crx, content_type="application/octet-stream")
             #return HttpResponse(crx)
         except:
             context['error']='the link is weak'
