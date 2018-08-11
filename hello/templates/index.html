@@ -32,22 +32,21 @@
 {# Read the documentation for more information #}
 -->
 
+<div class="container">
+  <form class="border">
+    {% csrf_token %}
 
-{% block form %}
-<form class="border">
-  {% csrf_token %}
+    <div class="form-group">
+      <label for="inputdefault">Insert the web store url of the extension</label>
+      <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
+      {% buttons %}
+      <button id="submit_button" class="btn btn-primary" type="submit" >
+        Download extension
+      </button>
+    </div>
+  </form>
+</div>
 
-  <div class="form-group">
-    <label for="inputdefault">Insert the web store url of the extension</label>
-    <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
-    {% buttons %}
-    <button id="submit_button" class="btn btn-primary" type="submit" >
-      {% bootstrap_icon "star" %} Download extension
-    </button>
-    {% endbuttons %}
-  </div>
-</form>
-{% endblock %}
-
-<h2>{{ error }}</h2>
-{% endblock %}
+<div class="alert alert-warning">
+  <h2>{{ error }}</h2>
+</div>
