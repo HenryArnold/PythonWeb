@@ -3,13 +3,6 @@
 {% load static %}
 {% load bootstrap3 %}
 {% block content %}
-<div class="container-fluid">
-<div >
-  <div class="jumbotron text-center" style="margin-bottom:0" >
-    <h1>Chrome Extension Downloader</h1>
-    <p>easily download chrome extensions</p>
-  </div>
-</div>
 {# Load the tag library #}
 {% load bootstrap3 %}
 
@@ -20,25 +13,32 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
-<div class="container" padding="10px 100px 10000px 10px ">
-  <form role="form">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="inputdefault">Insert the web store url of the extension</label>
-      <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
-      <button id="submit_button" class="btn btn-primary" type="submit" >
-        Download extension
-      </button>
+
+<div class="container" padding="10px">
+  <div class="container" padding="10px">
+    <div class="jumbotron text-center" style="margin-bottom:0" >
+      <h1>Chrome Extension Downloader</h1>
+      <p>easily download chrome extensions</p>
     </div>
-  </form>
-</div>
+  </div>
+  <div class="container" padding="40px 100px 10000px 10px ">
+    <form role="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="inputdefault">Insert the web store url of the extension</label>
+        <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
+        <button id="submit_button" class="btn btn-primary" type="submit" >
+          Download extension
+        </button>
+      </div>
+    </form>
+  </div>
 
 {% if error %}
-<div class="alert alert-warning" padding="10px 100px 100px 10px ">
-  <h2>{{ error }}</h2>
-</div>
+  <div class="alert alert-warning" padding="10px 100px 100px 10px ">
+    <h2>{{ error }}</h2>
+  </div>
 {% endif %}
 
 </div>
-
 {% endblock %}
