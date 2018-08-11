@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% load static %}
 {% load bootstrap3 %}
+{% block content %}
 
 <h1>Chrome Extension Downloader</h1>
 <p>easily download chrome extensions</p>
@@ -32,3 +33,5 @@
 <div class="alert alert-warning">
   <h2>{{ error }}</h2>
 </div>
+
+{% endblock %}
