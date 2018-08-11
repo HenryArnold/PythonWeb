@@ -22,14 +22,16 @@
     </div>
   </div>
   <div class="container" padding="40px 100px 10000px 10px ">
-    <form role="form">
+    <form role="form" >
       {% csrf_token %}
       <div class="form-group">
         <label for="inputdefault">Insert the web store url of the extension</label>
-        <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
+        <div class="form-control">
+        <input name="url" class="input-group input-group-lg " id="inputdefault" type="text" placeholder="https://chrome.google.com/webstore/detail/...">
         <button id="submit_button" class="btn btn-primary" type="submit" >
           Download extension
         </button>
+        </div>
       </div>
     </form>
   </div>
