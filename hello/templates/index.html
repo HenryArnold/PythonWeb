@@ -21,9 +21,9 @@
       <p>easily download chrome extensions</p>
     </div>
   </div>
-  
-  <div class="container" padding="40px 100px 10000px 10px ">
-    <form role="form" >
+
+<div class="container" padding="40px 100px 10000px 10px ">
+    
       {% csrf_token %}
       <div class="form-group">
         <label for="inputdefault">Insert the web store url of the extension</label>
@@ -37,14 +37,12 @@
         </span>
         </div>
       </div>
-    </form>
-  </div>
 
 {% if error %}
-  <div class="alert alert-warning" padding="10px 100px 100px 10px ">
+  <div class="alert alert-warning" padding="10px">
     <h2>{{ error }}</h2>
   </div>
 {% endif %}
-
+</div>
 
 {% endblock %}
