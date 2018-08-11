@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^help', hello.views.help, name='help'),
     url(r'^db', hello.views.db, name='db'),
+    url(r'^google740430dd129e0ed2', hello.views.google, name='google'),
     path('admin/', admin.site.urls),
 ]

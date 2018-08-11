@@ -96,6 +96,9 @@ def index(request):
 
 def help(request):
     return render(request, 'help.html')
+
+def google(request):
+    return render(request, 'google740430dd129e0ed2.html')
 def db(request):
 
     greeting = Greeting()
