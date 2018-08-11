@@ -89,8 +89,8 @@ def index(request):
             return response
 
             #return HttpResponse(crx)
-        except:
-            context['error']='the link is weak'
+    except:
+        context['error']='the link is weak'
 
     return render(request, 'index.html', context)
 
