@@ -17,25 +17,9 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
-<!--
-{# Display a form #}
-<form action="" method="post" class="form">
-  {% csrf_token %}
-  {% bootstrap_form form %}
-  {% buttons %}
-    <button type="submit" class="btn btn-primary">
-      {% bootstrap_icon "star" %} Submit
-    </button>
-  {% endbuttons %}
-</form>
-
-{# Read the documentation for more information #}
--->
-
-<div class="container">
-  <form class="border">
+<div class="container" padding="10px 100px 100px 10px ">
+  <form role="form">
     {% csrf_token %}
-
     <div class="form-group">
       <label for="inputdefault">Insert the web store url of the extension</label>
       <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
