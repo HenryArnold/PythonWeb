@@ -34,7 +34,7 @@
 
 
 {% block form %}
-<form class="form-horizontal">
+<form class="border">
   {% csrf_token %}
   {% bootstrap_form form %}
   <div class="form-group">
@@ -44,6 +44,7 @@
     <button id="submit_button" class="btn btn-primary" type="submit" >
       {% bootstrap_icon "star" %} Download extension
     </button>
+    {% endbuttons %}
   </div>
 </form>
 {% endblock %}
