@@ -94,7 +94,8 @@ def index(request):
 
     return render(request, 'index.html', context)
 
-
+def help(request):
+    return render(request, 'help.html')
 def db(request):
 
     greeting = Greeting()

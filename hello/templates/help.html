@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+<div class="container">
+		<h2>How to install downloaded extensions</h2>
+		<h4>1. If you try to drag-and-drop the downloaded extension into Chrome, the browser is blocking the installation.</h4>
+		<p class="image">
+			<img src="../static/chrome-extensions-error.png" alt="error">
+		</p>
+		<h4>2. You need to open the tab <em>extensions</em> with URL <em>chrome://extensions</em> or Menu &gt; Settings &gt; Extensions.</h4>
+		<p class="image">
+			<img src="../static/chrome-extensions.png" alt="tab extensions">
+		</p>
+		<h4>3. Now you can drag-and-drop the extension into Chrome and the installation starts.</h4>
+		<p class="image">
+			<img src="../static/chrome-extensions-drop.png" alt="tab extensions drop">
+		</p>
+</div>
+
+{% endblock %}
