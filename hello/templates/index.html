@@ -14,30 +14,29 @@
 {% bootstrap_messages %}
 
 
-<div class="container" padding="10px">
+<div class="container-fluid" padding="10px">
     <div class="jumbotron text-center" >
       <h1>Chrome Extension Downloader</h1>
-      <h3>easily download chrome extensions</h3>
+      <h2>easily download chrome extensions</h2>
     </div>
 </div>
 
 <div class="container "  padding="40px 100px 10000px 10px ">
   <form role="form">
       {% csrf_token %}
-      <div class="form-group border" >
+      <div class="form-group border card" >
         <div class="input-group col-lg-6">
-          <label for="inputdefault">
+          <h3>
             Insert the web store url of the extension
-          </label>
+          </h3>
         </div>
         <div class="input-group col-lg-6">
-        <input name="url" class="input-group-lg span7"  type="text" placeholder="https://chrome.google.com/webstore/detail/...">
-        <span class="input-group-addon">
-        <button class="btn btn-primary btn-large"  type="submit" >
-          Download extension
-        </button>
-        </span>
-
+          <input name="url" class="input-group-lg span7"  type="text" placeholder="https://chrome.google.com/webstore/detail/...">
+          <span class="input-group-addon">
+          <button class="btn btn-primary btn-large"  type="submit" >
+            Download extension
+          </button>
+          </span>
         </div>
       </div>
 
