@@ -16,17 +16,18 @@
 
 
   <div class="container" padding="10px">
-    <div class="jumbotron text-center" style="margin-bottom:0" >
+    <div class="jumbotron text-center" >
       <h1>Chrome Extension Downloader</h1>
       <p>easily download chrome extensions</p>
     </div>
   </div>
+  
   <div class="container" padding="40px 100px 10000px 10px ">
     <form role="form" >
       {% csrf_token %}
       <div class="form-group">
         <label for="inputdefault">Insert the web store url of the extension</label>
-        <div class="form-control">
+        <div class>
         <input name="url" class="input-group input-group-lg " id="inputdefault" type="text" placeholder="https://chrome.google.com/webstore/detail/...">
 
         <span class="input-group-addon">
