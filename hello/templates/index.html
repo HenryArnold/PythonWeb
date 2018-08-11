@@ -22,27 +22,28 @@
     </div>
   </div>
 
-<div class="container" padding="40px 100px 10000px 10px ">
-
+<div class="container "  padding="40px 100px 10000px 10px ">
+<form role="form">
       {% csrf_token %}
-      <div class="form-group border" padding="10px">
+      <div class="form-group border" >
         <label for="inputdefault">Insert the web store url of the extension</label>
-        <div class="input-append">
-        <input name="url" class="input-group input-group-lg input-append" id="inputdefault" type="text" placeholder="https://chrome.google.com/webstore/detail/...">
+        <div class="input-group">
+        <input name="url" class=" input-group-lg input-append" id="inputdefault" type="text" placeholder="https://chrome.google.com/webstore/detail/...">
         <span class="input-group-addon">
-        <button class="btn btn-primary btn-large  type="submit" >
+        <button class="btn btn-primary btn-large"  type="submit" >
           Download extension
         </button>
-      </span>
+        </span>
 
         </div>
       </div>
 
 {% if error %}
-  <div class="alert alert-warning" padding="10px">
+  <div class="alert alert-warning form-group" >
     <h2>{{ error }}</h2>
   </div>
 {% endif %}
+</form>
 </div>
 
 {% endblock %}
