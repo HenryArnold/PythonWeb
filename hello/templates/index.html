@@ -17,6 +17,7 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
+<!--
 {# Display a form #}
 <form action="" method="post" class="form">
   {% csrf_token %}
@@ -29,16 +30,23 @@
 </form>
 
 {# Read the documentation for more information #}
-<!--
+-->
+
+
 {% block form %}
-<form class="form-horizontal" id="pciForm">
+<form class="form-horizontal">
+  {% csrf_token %}
+  {% bootstrap_form form %}
   <div class="form-group">
     <label for="inputdefault">Insert the web store url of the extension</label>
     <input name="url"  placeholder="https://chrome.google.com/webstore/detail/..." class="form-control" id="inputdefault" type="text">
-    <button id="submit_button" class="btn btn-primary" type="submit" >Download extension</button>
+    {% buttons %}
+    <button id="submit_button" class="btn btn-primary" type="submit" >
+      {% bootstrap_icon "star" %} Download extension
+    </button>
   </div>
 </form>
 {% endblock %}
--->
+
 <h2>{{ error }}</h2>
 {% endblock %}
