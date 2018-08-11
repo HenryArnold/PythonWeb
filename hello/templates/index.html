@@ -24,20 +24,16 @@
 <div class="container "  padding="40px 100px 10000px 10px ">
   <form role="form">
       {% csrf_token %}
-      <div class=" border card" >
-        <div class="input-group col-lg-6">
+      <div class=" border card input-group" >
           <h3>
             Insert the web store url of the extension
           </h3>
-        </div>
-        <div class="input-group col-lg-6">
           <input name="url" class="input-group-lg span7"  type="text" placeholder="https://chrome.google.com/webstore/detail/...">
           <span class="input-group-addon">
-          <button class="btn btn-primary btn-large"  type="submit" >
-            Download extension
-          </button>
+            <button class="btn btn-primary btn-large"  type="submit" >
+              Download extension
+            </button>
           </span>
-        </div>
       </div>
 
     {% if error %}
