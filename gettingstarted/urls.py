@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import hello.views
-
+import logs.views
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^help', hello.views.help, name='help'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^google740430dd129e0ed2', hello.views.google, name='google'),
+    path('logs/', logs.views.logs),
     path('admin/', admin.site.urls),
 ]

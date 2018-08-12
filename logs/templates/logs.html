@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+<div class="container-fluid" padding="10px">
+    <div class="jumbotron text-center" >
+      <h1> Update Logs </h1>
+    </div>
+</div>
+
+<div class="container" pudding="10px">
+{% if logs %}
+<table class="table table-striped">
+  <caption>update logs</caption>
+  <thead>
+    <tr>
+      <th>time/data</th>
+      <th>logs</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for log in logs %}
+    <tr>
+      <td>{{ log.data }}</td>
+      <td>{{ log.log_text }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<h2>No logs are available</h2>
+{% endif %}
+</div>
+{% endblock %}
