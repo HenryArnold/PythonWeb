@@ -41,9 +41,13 @@
     {% endif %}
   </form>
   <div id="disqus_thread"></div>
+<!-- share system -->
+<div class="container">
+  <a href="https://www.facebook.com/sharer.php?u=${www.online-downloader.herokuapp.com}" target="_blank" style="margin-right:19px;"><img src="${fbShareJpg}" style="border:none 0;" alt="" /></a>
+  <a href="https://twitter.com/share" target="_blank" data-url="${www.online-downloader.herokuapp.com}" data-text="" data-via=""data-lang="ja"><img src="${twitterShareJpg}" style="border:none 0;" alt="" /></a>
+<div>
 
-<div  padding="100px 10px">
-
+<!-- comment system -->
 <div id="containers"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -79,7 +83,5 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</div>
--->
+</div>-->
 {% endblock %}
