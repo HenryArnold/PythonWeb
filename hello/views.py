@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
-
 def GetId(url):
     list0=[]
     str0=''
@@ -14,6 +12,12 @@ def GetId(url):
             str0=''
 
     ids = list0[-1]
+    str1=''
+    for i in ids:
+        if i=='?':
+            break
+        str1+=i        
+    ids=str1
     name = list0[-2]
     return (ids, name)
 
@@ -34,13 +38,10 @@ def index(request):
             crx=urllib.request.urlopen(crx).read()
             response =  HttpResponse(crx, content_type="application/octet-stream")
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
-
             return response
-
             #return HttpResponse(crx)
     except:
         context['error']='The link is weak'
-
     return render(request, 'index.html', context)
 
 def help(request):
@@ -48,11 +49,9 @@ def help(request):
 
 def google(request):
     return render(request, 'google740430dd129e0ed2.html')
-def db(request):
 
+def db(request):
     greeting = Greeting()
     greeting.save()
-
     greetings = Greeting.objects.all()
-
     return render(request, 'db.html', {'greetings': greetings})

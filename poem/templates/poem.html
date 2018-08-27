@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load bootstrap3 %}
+{# Load the tag library #}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+
+<div class="container-fluid" padding="10px">
+    <div class="jumbotron text-center" >
+      <h1>Poem Generator</h1>
+    </div>
+</div>
+
+<div class="container "  padding="40px 100px 10000px 10px ">
+  <form>
+      {% csrf_token %}
+      <h3 for="basic-url"> Input The Head Of Poem </h3>
+      <div class=" border input-group form-group form-group-lg" padding="20px" >
+          <input name="head" class="input-group form-control"  type="text" id="basic-url" placeholder="一二三四">
+          <span class="input-group-addon">
+            <button class="btn btn-primary btn-large"  type="submit" >
+              Generate
+            </button>
+          </span>
+      </div>
+
+    {% if error %}
+    <div class="alert alert-warning form-group form-grop-sm" >
+      <h2>{{ error }}</h2>
+    </div>
+    {% endif %}
+  </form>
+
+<div class="card-deck">
+  {% if poems %}
+  {% for poem in poems %}
+  <div class="card" style="width: 24rem;">
+    <img class="card-img-top" src="../static/img/1.jpg" alt="poem card">
+    <div class="card-body">
+      {% for p in poem %}
+      <p class="card-text">{{ p }}</p>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
