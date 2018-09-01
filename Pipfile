@@ -6,7 +6,6 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 numpy = "*"
-collections = "*"
 django-heroku = "*"
 "django-bootstrap3" = "*"
 "html5lib" = "*"
