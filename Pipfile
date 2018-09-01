@@ -5,6 +5,9 @@ verify_ssl = true
 [packages]
 django = "*"
 gunicorn = "*"
+tensorflow = "*"
+numpy = "*"
+collections = "*"
 django-heroku = "*"
 "django-bootstrap3" = "*"
 
