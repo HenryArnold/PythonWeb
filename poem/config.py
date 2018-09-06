@@ -6,13 +6,13 @@
    e-mail: huangjipengnju@gmail.com
    github: https://github.com/hjptriplebee
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
-import tensorflow as tf
-import numpy as np
+#import tensorflow as tf
+#import numpy as np
 #import argparse
 import os
 import random
 import time
-import collections
+#import collections
 
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))

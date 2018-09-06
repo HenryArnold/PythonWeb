@@ -5,6 +5,8 @@ from poem import data, model
 from poem.config import *
 # Create your views here.
 def getPoem(head):
+    pass
+    '''
     trainData=data.POEMS(trainPoems)
     xiaocai=model.MODEL(trainData)
     poem11=xiaocai.testHead(head).replace('\n','')
@@ -32,6 +34,7 @@ def getPoem(head):
     poems.append(poem2)
     poems.append(poem3)
     return poems
+    '''
 
 def poem(request):
     context={}
