@@ -33,8 +33,8 @@ def Youtube(url):
     command="youtube-dl "+url
     os.system(command)
     filename=os.system("ls | grep mp4")
-    mp4=file.open(filename)
-    return filename,mp4 
+    mp4=open(filename)
+    return filename,mp4
 # Create your views here.
 def index(request):
     from django.http import StreamingHttpResponse
@@ -61,9 +61,9 @@ def index(request):
             if "webstore" in url:
                 the_file_name,file=Extension(url)
             if "youtube" in url:
-                the_file_name,file=Youtube(url)
+                the_file_name,mp4=Youtube(url)
             import urllib.request
-            file=file.read()
+            file= mp4.read()
             response =  HttpResponse(file, content_type="application/octet-stream")
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
