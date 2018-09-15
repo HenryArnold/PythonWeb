@@ -68,7 +68,8 @@ def index(request):
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
     except Exception as error:
-        context['error']= error
+        #context['error']= error
+        context['error']=the_file_name
     return render(request, 'index.html', context)
 
 def help(request):
