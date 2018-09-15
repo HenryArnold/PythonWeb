@@ -64,8 +64,8 @@ def index(request):
             response =  HttpResponse(file, content_type="application/octet-stream")
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
-    except:
-        context['error']='The link is weak'
+    except Exception as error:
+        context['error']= error
     return render(request, 'index.html', context)
 
 def help(request):
