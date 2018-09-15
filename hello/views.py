@@ -56,9 +56,9 @@ def index(request):
         if 'url' in request.GET:
             url=request.GET['url']
             if "webstore" in url:
-                the_file_name,file=Extension()
+                the_file_name,file=Extension(url)
             if "youtube" in url:
-                the_file_name,file=Youtube()
+                the_file_name,file=Youtube(url)
             import urllib.request
             file=file.read()
             response =  HttpResponse(file, content_type="application/octet-stream")
