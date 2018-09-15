@@ -25,7 +25,7 @@ def Extension(url):
     the_file_name+=".crx"
     crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+ids+'%26installsource%3Dondemand%26uc'
     import urllib.request
-    crx=urllib.request.urlopen(crx).read()
+    crx=urllib.request.urlopen(crx)
     return the_file_name, crx
 
 def Youtube(url):
