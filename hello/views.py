@@ -31,9 +31,10 @@ def Extension(url):
 def Youtube(url):
     import os
     command="youtube-dl "+url
-    mp3=os.system(command)
-    the_file_name=mp3.basename()
-    return the_file_name, mp3
+    os.system(command)
+    filename=os.system("ls | grep mp4")
+    mp4=file.open(filename)
+    return filename,mp4 
 # Create your views here.
 def index(request):
     from django.http import StreamingHttpResponse
