@@ -33,7 +33,7 @@ def Youtube(url):
     command="youtube-dl "+url
     os.system(command)
     filename=os.system("ls | grep mp4")
-    mp4=open(filename)
+    mp4=file(filename, 'w+b')
     return filename,mp4
 # Create your views here.
 def index(request):
