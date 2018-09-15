@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="container "  padding="40px 100px 10000px 10px ">
+<div class="container ">
   <form>
       {% csrf_token %}
       <h3 for="basic-url"> Insert the web store url of the extension </h3>
@@ -37,10 +37,11 @@
     </div>
     {% endif %}
   </form>
-  <div id="disqus_thread"></div>
+
 <!-- share system -->
 
 <!-- comment system -->
+<div><h2>Report Bug Below</h2></div>
 <div id="containers"></div>
   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -77,4 +78,5 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>-->
+</div>
 {% endblock %}

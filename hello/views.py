@@ -16,18 +16,29 @@ def GetId(url):
     for i in ids:
         if i=='?':
             break
-        str1+=i        
+        str1+=i
     ids=str1
     name = list0[-2]
     return (ids, name)
+def Extension(url):
+    ids,the_file_name=GetId(url)
+    the_file_name+=".crx"
+    crx='https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D'+ids+'%26installsource%3Dondemand%26uc'
+    return the_file_name, crx
 
-
+def Youtube(url):
+    import os
+    command="youtube-dl "+url
+    mp3=os.system(command)
+    the_file_name=mp3.basename()
+    return the_file_name, mp3
 # Create your views here.
 def index(request):
     from django.http import StreamingHttpResponse
     chunk_size=512
     context = {}
     context['error'] =''
+    '''
     try:
         if 'url' in request.GET:
             url = request.GET['url']
@@ -40,6 +51,19 @@ def index(request):
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
             #return HttpResponse(crx)
+    '''
+    try:
+        if 'url' in request.GET:
+            url=request.GET['url']
+            if "webstore" in url:
+                the_file_name,file=Extension()
+            if "youtube" in url:
+                the_file_name,file=Youtube()
+            import urllib.request
+            file=file.read()
+            response =  HttpResponse(file, content_type="application/octet-stream")
+            response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
+            return response
     except:
         context['error']='The link is weak'
     return render(request, 'index.html', context)

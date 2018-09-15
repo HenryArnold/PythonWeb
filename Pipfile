@@ -11,6 +11,7 @@ django-heroku = "*"
 "html5lib" = "*"
 tensorflow = "*"
 ipython = "*"
+youtube-dl = "*"
 
 [requires]
 python_version = "3.6"
