@@ -63,13 +63,11 @@ def index(request):
             if "youtube" in url:
                 the_file_name,mp4=Youtube(url)
             import urllib.request
-            file= mp4.read()
             response =  HttpResponse(file, content_type="application/octet-stream")
             response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
             return response
     except Exception as error:
-        #context['error']= error
-        context['error']=the_file_name
+        context['error']= error
     return render(request, 'index.html', context)
 
 def help(request):

@@ -10,8 +10,8 @@ django-heroku = "*"
 "django-bootstrap3" = "*"
 "html5lib" = "*"
 tensorflow = "*"
-ipython = "*"
 youtube-dl = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.6"
